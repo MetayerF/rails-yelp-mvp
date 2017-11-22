@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">My Restaurant App</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to 'Menu', restaurants_path %>></li>
+      <li><%= link_to 'Create a restaurants', new_restaurant_path %></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<h1>All the restaurants</h1>
+
+<%= link_to 'Create a restaurants', new_restaurant_path %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+
+<% @restaurants.each do |restaurant| %>
+  <ul>
+    <li><%= restaurant.name %>
+      <%= link_to 'Show', restaurant %>
+    </li>
+  </ul>
+    <% end %>
+
+    </div>
+  </div>
+</div>
